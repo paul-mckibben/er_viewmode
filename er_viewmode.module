@@ -73,6 +73,8 @@ function er_viewmode_field_widget_form_alter(&$element, FormStateInterface $form
         }
 
         // Add the view modes to the field widget.
+        $original_element = $element;
+        $element = ['reference_widget' => $original_element];
         $element['view_mode'] = array(
           '#type' => 'select',
           '#title' => t('View Mode'),
